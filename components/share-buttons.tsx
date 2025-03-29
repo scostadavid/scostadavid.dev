@@ -47,7 +47,7 @@ export function ShareButtons({ title, url }: ShareButtonsProps) {
             <Twitter className="h-5 w-5 text-[#1DA1F2]" />
           </Button>
         </a>
-        <a
+        {/* <a
           href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
           target="_blank"
           rel="noopener noreferrer"
@@ -66,7 +66,7 @@ export function ShareButtons({ title, url }: ShareButtonsProps) {
           <Button variant="outline" size="icon" className="border-white/20 bg-black/20 hover:bg-white/10 rounded-style">
             <Linkedin className="h-5 w-5 text-[#0077B5]" />
           </Button>
-        </a>
+        </a> */}
         <Button
           variant="outline"
           size="icon"

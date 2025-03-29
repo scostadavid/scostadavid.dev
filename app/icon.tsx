@@ -17,9 +17,7 @@ export default function Icon() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: '#1E293B', // Fundo azul escuro
           color: 'white',
-          borderRadius: '50%',
         }}
       >
         👨‍💻

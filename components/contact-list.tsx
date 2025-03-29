@@ -7,7 +7,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/context/language-context"
 
-export function ContactSection() {
+export function ContactList() {
   const { t } = useLanguage()
 
   return (
