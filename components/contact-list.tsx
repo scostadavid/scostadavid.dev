@@ -21,13 +21,13 @@ export function ContactList() {
           viewport={{ once: true }}
         >
           <div className="bg-zinc-900 border border-white/10 rounded-style p-6 h-full flex flex-col">
-            <div className="flex items-center gap-4 mb-4">
+            <div className="flex items-start gap-4 mb-4">
               <div className="bg-primary/20 p-3 rounded-style text-primary">
                 <contact.icon className="h-6 w-6" />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white">{contact.title}</h3>
-                <p className="text-white/70">{contact.handle}</p>
+                <p className="text-white/70 [overflow-wrap:anywhere]">{contact.handle}</p>
               </div>
             </div>
             
@@ -61,7 +61,7 @@ const contacts = [
     id: 2,
     icon: Linkedin,
     title: "LinkedIn",
-    handle: "linkedin.com/in/scostadavid",
+    handle: "/in/scostadavid",
     href: "https://linkedin.com/in/scostadavid",
     target: "_blank",
     rel: "noopener noreferrer",
@@ -71,7 +71,7 @@ const contacts = [
     id: 3,
     icon: Github,
     title: "GitHub",
-    handle: "github.com/scostadavid",
+    handle: "/scostadavid",
     href: "https://github.com/scostadavid",
     target: "_blank",
     rel: "noopener noreferrer",
@@ -81,8 +81,8 @@ const contacts = [
     id: 4,
     icon: Twitter,
     title: "Twitter",
-    handle: "twitter.com/scostadavid",
-    href: "https://twitter.com/scostadavid",
+    handle: "/scostadavid",
+    href: "https://x.com/scostadavid",
     target: "_blank",
     rel: "noopener noreferrer",
     buttonText: "Seguir no Twitter"
