@@ -5,6 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/toaster";
 import { LanguageProvider } from "@/context/language-context";
+import { Analytics } from "@vercel/analytics/react";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -87,6 +88,7 @@ export default function RootLayout({
         <LanguageProvider>
           <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
             {children}
+            <Analytics />
             <Toaster />
           </ThemeProvider>
         </LanguageProvider>
