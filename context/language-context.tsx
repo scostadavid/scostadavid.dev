@@ -18,7 +18,7 @@ const en = {
   about: {
     title: "Hello, World!",
     paragraph1:
-      "Software developer with 4 years of experience in web development, specialized in building robust products and systems.",
+      "Software developer with 3 years of experience in web development, specialized in building robust products and systems.",
     paragraph2:
       "Proficient in modern web technologies with focus on clean code, TDD and scalable software architectures. Full stack experience with monoliths, microservices, CI/CD pipelines and Linux."
   },
@@ -56,7 +56,7 @@ const en = {
   footer: {
     rights: "All rights reserved.",
     experience:
-      "Computer Science graduate from São Paulo State University with over 4 years of problem solving experience",
+      "Computer Science graduate from São Paulo State University with over 3 years of problem solving experience",
   },
   share: {
     title: "Share this post",
@@ -84,7 +84,7 @@ const pt = {
   about: {
     title: "Olá, Mundo!",
     paragraph1:
-      "Desenvolvedor de software com 4 anos de experiência em desenvolvimento web, especializado na construção de produtos e sistemas robustos.",
+      "Desenvolvedor de software com 3 anos de experiência em desenvolvimento web, especializado na construção de produtos e sistemas robustos.",
     paragraph2:
       "Domínio de tecnologias web modernas com foco em clean code, TDD e arquiteturas de software escaláveis. Experiência full stack com monolitos, micro serviços, pipelines de CI/CD e Linux."
   },
@@ -123,7 +123,7 @@ const pt = {
   footer: {
     rights: "Todos os direitos reservados.",
     experience:
-      "Formado em Ciência da Computação pela Universidade Estadual de São Paulo (UNESP) com mais de 4 anos de experiência em resolução de problemas",
+      "Formado em Ciência da Computação pela Universidade Estadual de São Paulo (UNESP) com mais de 3 anos de experiência em resolução de problemas",
   },
   share: {
     title: "Compartilhar este post",
