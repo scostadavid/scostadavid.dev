@@ -14,6 +14,18 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
+  redirects: async () => [
+    {
+      source: '/',
+      destination: '/en',
+      permanent: false,
+    },
+    {
+      source: '/blog',
+      destination: '/en/blog',
+      permanent: true
+    }
+  ],
 }
 
 export default nextConfig;

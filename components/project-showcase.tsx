@@ -59,28 +59,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
 
   return (
     <div className="relative">
-      {/* Desktop Navigation Controls */}
-      <div className="hidden md:flex justify-between absolute top-1/2 left-0 right-0 transform -translate-y-1/2 z-10 px-4 md:px-12">
-        <Button
-          variant="outline"
-          size="icon"
-          onClick={handlePrevious}
-          disabled={activeIndex === 0}
-          className="rounded-style border-white/20 bg-black/50 backdrop-blur-lg hover:bg-white/10"
-        >
-          <ArrowRight className="h-6 w-6 rotate-180" />
-        </Button>
-        <Button
-          variant="outline"
-          size="icon"
-          onClick={handleNext}
-          disabled={activeIndex === projects.length - 1}
-          className="rounded-style border-white/20 bg-black/50 backdrop-blur-lg hover:bg-white/10"
-        >
-          <ArrowRight className="h-6 w-6" />
-        </Button>
-      </div>
-
+      
       <div
         ref={containerRef}
         className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar"
@@ -96,7 +75,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
         {projects.map((project, index) => (
           <div
             key={project.id}
-            className="min-w-full h-[70vh] flex items-center justify-center snap-center px-4 md:px-0"
+            className="min-w-full md: flex items-center justify-center snap-center px-4 md:px-0"
           >
             <motion.div
               className="w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
@@ -149,7 +128,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
         ))}
       </div>
 
-      <div className="flex justify-center gap-2 mt-8">
+      <div className="flex justify-center gap-2 pt-8">
         {projects.map((_, index) => (
           <button
             key={index}
@@ -168,6 +147,29 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
           />
         ))}
       </div>
+
+      {/* Desktop Navigation Controls */}
+      <div className="hidden md:flex justify-between absolute bottom left-0 right-0 transform -translate-y-1/2 z-10 px-4 md:px-12">
+        <Button
+          variant="outline"
+          size="icon"
+          onClick={handlePrevious}
+          disabled={activeIndex === 0}
+          className="rounded-style border-white/20 bg-black/50 backdrop-blur-lg hover:bg-white/10"
+        >
+          <ArrowRight className="h-6 w-6 rotate-180" />
+        </Button>
+        <Button
+          variant="outline"
+          size="icon"
+          onClick={handleNext}
+          disabled={activeIndex === projects.length - 1}
+          className="rounded-style border-white/20 bg-black/50 backdrop-blur-lg hover:bg-white/10"
+        >
+          <ArrowRight className="h-6 w-6" />
+        </Button>
+      </div>
+
     </div>
   )
 }

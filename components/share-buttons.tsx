@@ -4,17 +4,17 @@ import { useState } from "react"
 import { Twitter, Facebook, Linkedin, LinkIcon, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useToast } from "@/components/ui/use-toast"
-import { useLanguage } from "@/context/language-context"
 
-interface ShareButtonsProps {
-  title: string
-  url: string
-}
 
-export function ShareButtons({ title, url }: ShareButtonsProps) {
+type ShareButtonsProps = {
+  title: string,
+  url: string,
+  t: any,
+};
+
+export function ShareButtons({ title, url, t }: ShareButtonsProps) {
   const [copied, setCopied] = useState(false)
   const { toast } = useToast()
-  const { t } = useLanguage()
 
   const encodedTitle = encodeURIComponent(title)
   const encodedUrl = encodeURIComponent(url)

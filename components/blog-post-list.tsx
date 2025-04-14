@@ -3,14 +3,18 @@ import Link from "next/link"
 import { Calendar } from "lucide-react"
 import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
-import { getSortedPostsData } from "@/lib/posts"
+import { getAllPosts } from "@/lib/posts"
+import { Locale } from "@/i18n.config";
 
 export async function BlogPostList({ 
-  limit 
+  limit,
+  locale
 }: { 
-  limit?: number 
+  limit?: number,
+  locale: Locale 
 }) {
-  const posts = await getSortedPostsData()
+  const fullLocale = locale === 'pt' ? 'pt-BR' : 'en-US';
+  const posts = await getAllPosts(fullLocale);
   const displayedPosts = limit ? posts.slice(0, limit) : posts
 
   return (
@@ -20,12 +24,12 @@ export async function BlogPostList({
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {displayedPosts.map((post) => (
-            <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
+            <Link key={post.slug} href={`/${locale}/blog/${post.slug}`} className="group">
               <div className="bg-zinc-900 border border-white/10 rounded-style p-6 h-full hover:bg-zinc-800 transition-colors duration-300">
                 {post.coverImage && (
                   <div className="relative aspect-video mb-4 overflow-hidden rounded-style border border-white/10">
                     <Image 
-                      src={post.coverImage.startsWith('/') ? post.coverImage : `/blog/posts/${post.folder}/${post.coverImage}`}
+                      src={post.coverImage.url}
                       alt={post.title}
                       fill
                       className="object-cover"

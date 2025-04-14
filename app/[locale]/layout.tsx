@@ -4,8 +4,9 @@ import { Space_Grotesk, JetBrains_Mono, Dancing_Script } from "next/font/google"
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/toaster";
-import { LanguageProvider } from "@/context/language-context";
 import { Analytics } from "@vercel/analytics/react";
+import { i18n, Locale } from '@/i18n.config';
+import { notFound } from "next/navigation";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -75,23 +76,29 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  params,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode,
+  params: { locale: Locale }
 }>) {
+  const isValidLocale = i18n.locales.includes(params.locale)
+
+  if (!isValidLocale) {
+    notFound()
+  }
+
   return (
     <html
-      lang="en"
+      lang={params.locale}
       suppressHydrationWarning
       className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} ${dancingScript.variable}`}
     >
       <body className="font-sans bg-black text-white">
-        <LanguageProvider>
           <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
             {children}
             <Analytics />
             <Toaster />
           </ThemeProvider>
-        </LanguageProvider>
       </body>
     </html>
   )

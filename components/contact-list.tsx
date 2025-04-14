@@ -5,11 +5,12 @@ import { Mail, Linkedin, Github, Twitter } from "lucide-react"
 import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
-import { useLanguage } from "@/context/language-context"
 
-export function ContactList() {
-  const { t } = useLanguage()
+type Props = {
+  t: any;
+};
 
+export function ContactList({t}: Props) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {contacts.map((contact, index) => (

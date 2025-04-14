@@ -46,7 +46,7 @@ export function SkillsGrid({ skills }: SkillsGridProps) {
         >
           <div className="relative bg-zinc-900 border border-white/10 rounded-style p-6 h-full overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="relative z-10 flex flex-col items-center text-center gap-4">
+            <div className="relative z-10 flex flex-col lg:flex-row items-center text-center gap-4">
               <div className="bg-white/10 p-3 rounded-style text-primary group-hover:text-white group-hover:bg-primary transition-colors duration-300">
                 {skill.icon}
               </div>
