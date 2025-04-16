@@ -25,6 +25,8 @@ export async function getAllPosts(locale = 'en-US') {
   }));
 }
 
+import { parseFields } from './parser';
+
 export async function getPostBySlug(slug: string, locale = 'en-US') {
   const entries = await client.getEntries({
     content_type: 'post',
@@ -37,13 +39,5 @@ export async function getPostBySlug(slug: string, locale = 'en-US') {
 
   if (!fields) return null;
 
-  return {
-    title: fields.title,
-    excerpt: fields.excerpt || '',
-    slug: fields.slug,
-    coverImage: fields.cover?.fields?.file?.url ? `https:${fields.cover.fields.file.url}` : null,
-    date: fields.date || new Date().toISOString(),
-    tags: fields.tags || [],
-    contentHtml: fields.content ? documentToReactComponents(fields.content) : '',
-  }
+  return parseFields(fields);
 }
